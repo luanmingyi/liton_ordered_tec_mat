@@ -140,7 +140,7 @@ classdef TEC_ZONE < liton_ordered_tec.TEC_ZONE_BASE
                 unvalid = any(unvalid(:));
                 if unvalid
                     warning('TEC_ZONE:RuntimeWarning', ...
-                        'FILE[%s]--ZONE[%s]: data[%s] is not valid (has nan or inf)', file.FileName, obj.ZoneName, file.Variables{kk});
+                        'FILE[%s]--ZONE[%s]: data[%s] has nan or inf', file.FileName, obj.ZoneName, file.Variables{kk});
                 end
                 if ~isequal(size(da),data_size)
                     ME = MException('TEC_ZONE:RuntimeError', ...
