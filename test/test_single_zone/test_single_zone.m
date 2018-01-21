@@ -3,7 +3,7 @@ clear
 close all
 clc
 %%
-addpath('../../source')
+addpath('../../liton_ordered_tec')
 import liton_ordered_tec.*
 %%
 x = 0:0.01:5;
