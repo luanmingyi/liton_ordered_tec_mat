@@ -261,6 +261,16 @@ classdef TEC_ZONE_LOG < liton_ordered_tec.TEC_ZONE_BASE
             buf  = sprintf('</Zone>'); obj.Xml_Text{end+1} = buf;
         end
         
+        function data = read_to_cell(obj,fid,var)
+            type = {'single','double','int32','int16','int8'};
+            data{length(var)} = [];
+            for k=1:length(var)
+                data_k = obj.Data(var(k));
+                fseek(fid, data_k.file_pt, 'bof');
+                data{k} = fread(fid,prod(obj.Real_Max),type{data_k.type});
+                data{k} = reshape(data{k},obj.Real_Max);
+            end
+        end
     end
     
 end

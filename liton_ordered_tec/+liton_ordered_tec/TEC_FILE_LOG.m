@@ -139,50 +139,102 @@ classdef TEC_FILE_LOG < liton_ordered_tec.TEC_FILE_BASE
         end
         
         function obj = read_xml(obj,file_root)
-            obj.FileName = char(file_root.getAttribute('FileName'));
-            obj.FilePath = char(file_root.getElementsByTagName('FilePath').item(0).getTextContent);
-            obj.Time_Begin = char(file_root.getElementsByTagName('Time').item(0).getTextContent);
-            obj.UsingTime = str2double(file_root.getElementsByTagName('UsingTime').item(0).getTextContent);
-            obj.Title = char(file_root.getElementsByTagName('Title').item(0).getTextContent);
-            obj.FileType = str2double(file_root.getElementsByTagName('FileType').item(0).getTextContent);
-            
-            temp = file_root.getElementsByTagName('Variables').item(0).getFirstChild;
-            v_n = 0;
-            while ~isempty(temp)
-                if temp.getNodeType~=temp.TEXT_NODE
-                    v_n = v_n + 1;
-                    obj.Variables{v_n} = char(temp.getNodeName);
-                end
-                temp = temp.getNextSibling;
-            end
-            
-            temp = file_root.getElementsByTagName('Auxiliary');
-            if temp.getLength~=0
-                temp = temp.item(0).getFirstChild;
+            if isa(file_root,'char')
+                doc = xmlread(file_root);
+                obj = obj.read_xml(doc.getDocumentElement);
+            else
+                obj.FileName = char(file_root.getAttribute('FileName'));
+                obj.FilePath = char(file_root.getElementsByTagName('FilePath').item(0).getTextContent);
+                obj.Time_Begin = char(file_root.getElementsByTagName('Time').item(0).getTextContent);
+                obj.UsingTime = str2double(file_root.getElementsByTagName('UsingTime').item(0).getTextContent);
+                obj.Title = char(file_root.getElementsByTagName('Title').item(0).getTextContent);
+                obj.FileType = str2double(file_root.getElementsByTagName('FileType').item(0).getTextContent);
+                
+                temp = file_root.getElementsByTagName('Variables').item(0).getFirstChild;
                 v_n = 0;
                 while ~isempty(temp)
                     if temp.getNodeType~=temp.TEXT_NODE
                         v_n = v_n + 1;
-                        obj.Auxiliary{v_n} = {char(temp.getNodeName), char(temp.getTextContent)};
+                        obj.Variables{v_n} = char(temp.getNodeName);
                     end
                     temp = temp.getNextSibling;
                 end
-            end
-            
-            temp = file_root.getElementsByTagName('Zones').item(0).getFirstChild;
-            obj.Zones = liton_ordered_tec.TEC_ZONE_LOG;
-            v_n = 0;
-            while ~isempty(temp)
-                if temp.getNodeType~=temp.TEXT_NODE
-                    v_n = v_n + 1;
-                    obj.Zones(v_n) = liton_ordered_tec.TEC_ZONE_LOG;
-                    obj.Zones(v_n) = obj.Zones(v_n).read_xml(temp);
+                
+                temp = file_root.getElementsByTagName('Auxiliary');
+                if temp.getLength~=0
+                    temp = temp.item(0).getFirstChild;
+                    v_n = 0;
+                    while ~isempty(temp)
+                        if temp.getNodeType~=temp.TEXT_NODE
+                            v_n = v_n + 1;
+                            obj.Auxiliary{v_n} = {char(temp.getNodeName), char(temp.getTextContent)};
+                        end
+                        temp = temp.getNextSibling;
+                    end
                 end
-                temp = temp.getNextSibling;
+                
+                temp = file_root.getElementsByTagName('Zones').item(0).getFirstChild;
+                obj.Zones = liton_ordered_tec.TEC_ZONE_LOG;
+                v_n = 0;
+                while ~isempty(temp)
+                    if temp.getNodeType~=temp.TEXT_NODE
+                        v_n = v_n + 1;
+                        obj.Zones(v_n) = liton_ordered_tec.TEC_ZONE_LOG;
+                        obj.Zones(v_n) = obj.Zones(v_n).read_xml(temp);
+                    end
+                    temp = temp.getNextSibling;
+                end
+                
+                obj = obj.gen_xml();
+                obj = obj.gen_json();
+            end
+        end
+        
+        function data = read_to_cell(obj,filepath,zone,var)
+            if strcmp(filepath,'~')
+                filepath = obj.FilePath;
+            end
+            if strcmp(zone,'all')
+                zone = 1:numel(obj.Zones);
+            end
+            if strcmp(var,'all')
+                var = 1:length(obj.Variables);
             end
             
-            obj = obj.gen_xml();
-            obj = obj.gen_json();
+            fid = fopen(fullfile(filepath,[obj.FileName,'.plt']),'rb');
+            if fid==-1
+                ME = MException('TEC_FILE_LOG:FileError', ['cannot open file ',filepath,' ',obj.FileName]);
+                throw(ME);
+            end
+            try
+                data{length(zone)} = [];
+                for k=1:length(zone)
+                    data{k} = obj.Zones(zone(k)).read_to_cell(fid,var);
+                end
+            catch ME
+                fclose(fid);
+                rethrow(ME)
+            end
+            fclose(fid);
+        end
+        
+        function data = read_to_struct(obj,filepath,zone,var)
+            if length(unique(obj.Variables))~=length(obj.Variables)
+                ME = MException('TEC_FILE_LOG:RuntimeError', 'exist same variable name');
+                throw(ME);
+            end
+            if strcmp(zone,'all')
+                zone = 1:numel(obj.Zones);
+            end
+            if strcmp(var,'all')
+                var = 1:length(obj.Variables);
+            end
+            data_temp = read_to_cell(obj,filepath,zone,var);
+            for k=1:length(zone)
+                for n=1:length(var)
+                    data(k).(obj.Variables{var(n)}) = data_temp{k}{n};
+                end
+            end
         end
         
     end
