@@ -5,7 +5,7 @@
     <matlabrelease>R2019b</matlabrelease>
     <name>Ordered_Tec</name>
     <type>toolbox</type>
-    <icon></icon>
+    <icon>logo.png</icon>
     <help_location>html</help_location>
   
 </productinfo>

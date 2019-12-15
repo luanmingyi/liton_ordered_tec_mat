@@ -14,3 +14,9 @@ liton_ordered_tec/example/us.xml
 liton_ordered_tec/example/read_data.xml
 liton_ordered_tec/example/data_type.xml
 liton_ordered_tec/example/us/test_05_grid.xml
+*.mltbx
+*.mlappinstall
+liton_ordered_tec/app/mat2tec_resources/
+liton_ordered_tec/html/Test.xml
+liton_ordered_tec.prj
+liton_ordered_tec/app/mat2tec.prj
