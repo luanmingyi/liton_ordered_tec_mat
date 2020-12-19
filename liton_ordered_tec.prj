@@ -1,0 +1,182 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration file="E:\_Project\liton_ordered_tec_mat\liton_ordered_tec.prj" location="E:\_Project\liton_ordered_tec_mat" name="liton_ordered_tec" target="target.toolbox" target-name="打包为工具箱">
+    <param.appname>liton_ordered_tec</param.appname>
+    <param.authnamewatermark>luanmy</param.authnamewatermark>
+    <param.email>luan_ming_yi@126.com</param.email>
+    <param.company />
+    <param.summary>writing ordered data (structural data) to binary tecplot files (.plt)</param.summary>
+    <param.description>Ordered_tec is a simple pack writing ordered data (structural data) to a binary tecplot file (.plt). Ordered_tec for MATLAB is written in MATLAB OOP. This package does not need any dependency, and it directly write binary files according to Tecplot binary data format.
+
+# Basic Features
+* Support 1, 2 and 3 dimensional data
+* Support multi-zone file
+* Support file types including grid, solution and full
+* Support solution time and strand Id for zone
+* Support auxiliary data for file and zone
+
+# Hightlight Features
+* Auto recognition the data type, supporting six types of data
+* Support exclude data with `Begin`, `EEnd` and `Skip`
+* Free setting of echo mode
+* Complete log system including log in xml and json
+* Read tec file easily
+* Easy GUI output with Matlab App `mat2tec`</param.description>
+    <param.screenshot>${PROJECT_ROOT}\liton_ordered_tec\logo.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.output>${PROJECT_ROOT}\liton_ordered_tec.mltbx</param.output>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.guid>456e8e71-8cb8-4cb6-9e8b-25ba266e631e</param.guid>
+    <param.exclude.filters />
+    <param.exclude.pcodedmfiles>true</param.exclude.pcodedmfiles>
+    <param.examples>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;examples&gt;
+   &lt;exampleCategory name="Getting Start"&gt;
+      &lt;example name="Getting Start" type="html"&gt;
+         &lt;file type="source"&gt;/example/html/getting_start.html&lt;/file&gt;
+         &lt;file type="main"/&gt;
+         &lt;file type="thumbnail"/&gt;
+      &lt;/example&gt;
+      &lt;example name="Multi-Zone" type="html"&gt;
+         &lt;file type="source"&gt;/example/html/multi_zone.html&lt;/file&gt;
+         &lt;file type="main"/&gt;
+         &lt;file type="thumbnail"/&gt;
+      &lt;/example&gt;
+      &lt;example name="Grid and Solution" type="html"&gt;
+         &lt;file type="source"&gt;/example/html/grid_solution.html&lt;/file&gt;
+         &lt;file type="main"/&gt;
+         &lt;file type="thumbnail"/&gt;
+      &lt;/example&gt;
+      &lt;example name="Unsteady Solution" type="html"&gt;
+         &lt;file type="source"&gt;/example/html/unsteady_solution.html&lt;/file&gt;
+         &lt;file type="main"/&gt;
+         &lt;file type="thumbnail"/&gt;
+      &lt;/example&gt;
+      &lt;example name="Data Type" type="html"&gt;
+         &lt;file type="source"&gt;/example/html/data_type.html&lt;/file&gt;
+         &lt;file type="main"/&gt;
+         &lt;file type="thumbnail"/&gt;
+      &lt;/example&gt;
+      &lt;example name="Read Data" type="html"&gt;
+         &lt;file type="source"&gt;/example/html/read_data.html&lt;/file&gt;
+         &lt;file type="main"/&gt;
+         &lt;file type="thumbnail"/&gt;
+      &lt;/example&gt;
+   &lt;/exampleCategory&gt;
+&lt;/examples&gt;</param.examples>
+    <param.demosxml />
+    <param.apps />
+    <param.registered.apps>
+      <file>${PROJECT_ROOT}\liton_ordered_tec\app\mat2tec.mlapp</file>
+    </param.registered.apps>
+    <param.docs>${PROJECT_ROOT}\liton_ordered_tec\info.xml</param.docs>
+    <param.getting.started.guide />
+    <param.matlabpath.excludes />
+    <param.javaclasspath.excludes />
+    <param.exported.on.package>true</param.exported.on.package>
+    <param.required.addons />
+    <param.matlab.project.id />
+    <param.matlab.project.name />
+    <param.release.start>R2019b</param.release.start>
+    <param.release.end>latest</param.release.end>
+    <param.release.current.only>false</param.release.current.only>
+    <param.compatiblity.windows>true</param.compatiblity.windows>
+    <param.compatiblity.macos>true</param.compatiblity.macos>
+    <param.compatiblity.linux>true</param.compatiblity.linux>
+    <param.compatiblity.matlabonline>false</param.compatiblity.matlabonline>
+    <param.installation.map />
+    <param.additional.sw.names />
+    <param.additional.sw.licenses />
+    <param.additional.sw.win.url />
+    <param.additional.sw.mac.url />
+    <param.additional.sw.linux.url />
+    <unset>
+      <param.company />
+      <param.version />
+      <param.output />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.exclude.filters />
+      <param.exclude.pcodedmfiles />
+      <param.demosxml />
+      <param.apps />
+      <param.getting.started.guide />
+      <param.matlabpath.excludes />
+      <param.javaclasspath.excludes />
+      <param.required.addons />
+      <param.matlab.project.id />
+      <param.matlab.project.name />
+      <param.release.current.only />
+      <param.compatiblity.windows />
+      <param.compatiblity.macos />
+      <param.compatiblity.linux />
+      <param.installation.map />
+      <param.additional.sw.names />
+      <param.additional.sw.licenses />
+      <param.additional.sw.win.url />
+      <param.additional.sw.mac.url />
+      <param.additional.sw.linux.url />
+    </unset>
+    <fileset.rootdir>
+      <file>${PROJECT_ROOT}\liton_ordered_tec</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\liton_ordered_tec\+liton_ordered_tec</file>
+      <file>${PROJECT_ROOT}\liton_ordered_tec\app</file>
+      <file>${PROJECT_ROOT}\liton_ordered_tec\DesktopToolset.xml</file>
+      <file>${PROJECT_ROOT}\liton_ordered_tec\example</file>
+      <file>${PROJECT_ROOT}\liton_ordered_tec\html</file>
+      <file>${PROJECT_ROOT}\liton_ordered_tec\info.xml</file>
+      <file>${PROJECT_ROOT}\liton_ordered_tec\logo.png</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}" name="liton_ordered_tec.mltbx" optional="false">E:\_Project\liton_ordered_tec_mat\liton_ordered_tec.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2019b</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
