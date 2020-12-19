@@ -17,6 +17,7 @@ Ordered_tec is a simple pack writing ordered data (structural data) to a binary 
 3. Free setting of echo mode
 4. Complete log system including log in xml and json
 5. Read tec file easily
+6. Easy GUI output with Matlab App `mat2tec`
 
 ## Usage
 

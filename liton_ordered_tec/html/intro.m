@@ -13,3 +13,4 @@
 % * Free setting of echo mode
 % * Complete log system including log in xml and json
 % * Read tec file easily
+% * Easy GUI output with Matlab App |mat2tec|
