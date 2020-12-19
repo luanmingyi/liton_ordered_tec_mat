@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><demos>
+    <name>Ordered_Tec</name>
+    <type>toolbox</type>
+    <icon>HelpIcon.DEMOS</icon>
+    <description>ordered_tec examples</description>
+    <website><a href="https://github.com/luanmingyi/liton_ordered_tec_mat">Github</a></website>
+    
+    <demosection>
+        <demoitem>
+            <label>Getting Start</label>
+            <type>M-file</type>
+            <source>getting_start</source>
+            <file>html/getting_start.html</file>
+        </demoitem>
+        <demoitem>
+            <label>Multi-Zone</label>
+            <type>M-file</type>
+            <source>multi_zone</source>
+            <file>html/multi_zone.html</file>
+        </demoitem>
+        <demoitem>
+            <label>Grid and Solution</label>
+            <type>M-file</type>
+            <source>grid_solution</source>
+            <file>html/grid_solution.html</file>
+        </demoitem>
+        <demoitem>
+            <label>Unsteady Solution</label>
+            <type>M-file</type>
+            <source>unsteady_solution</source>
+            <file>html/unsteady_solution.html</file>
+        </demoitem>
+        <demoitem>
+            <label>Data Type</label>
+            <type>M-file</type>
+            <source>data_type</source>
+            <file>html/data_type.html</file>
+        </demoitem>
+        <demoitem>
+            <label>Read Data</label>
+            <type>M-file</type>
+            <source>read_data</source>
+            <file>html/read_data.html</file>
+        </demoitem>
+    </demosection>
+</demos>

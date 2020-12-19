@@ -1,6 +1,7 @@
 *.json
 *.plt
 *.txt
+*.html
 test/test_xml/test_10.xml
 test/test_multi_file/test_05/test_05_grid.xml
 test/test_multi_file/test_05.xml
@@ -8,3 +9,14 @@ test/test_grid_solution/test_04_s.xml
 test/test_zone_array/untitled_file.xml
 test/test_grid_solution/test_04_g.xml
 test/test_data_type/test_09.xml
+test/test_read/test_read.xml
+liton_ordered_tec/example/us.xml
+liton_ordered_tec/example/read_data.xml
+liton_ordered_tec/example/data_type.xml
+liton_ordered_tec/example/us/test_05_grid.xml
+*.mltbx
+*.mlappinstall
+liton_ordered_tec/app/mat2tec_resources/
+liton_ordered_tec/html/Test.xml
+liton_ordered_tec.prj
+liton_ordered_tec/app/mat2tec.prj

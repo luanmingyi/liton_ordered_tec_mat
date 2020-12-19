@@ -1,1 +1,0 @@
-%% TEC_ZONE_LOG

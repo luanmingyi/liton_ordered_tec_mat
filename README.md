@@ -16,11 +16,13 @@ Ordered_tec is a simple pack writing ordered data (structural data) to a binary 
 2. Support exclude data with `Begin`, `EEnd` and `Skip`
 3. Free setting of echo mode
 4. Complete log system including log in xml and json
+5. Read tec file easily
+6. Easy GUI output with Matlab App `mat2tec`
 
 ## Usage
 
 ### Download and Configuration
-You only need to download the the folder `+ORDERED_TEC` and put it on the search path of MATLAB. Maybe we will distribute the package as a toolbox in the future.
+You only need to download the the folder `+liton_ordered_tec` and put it on the search path of MATLAB. Maybe we will distribute the package as a toolbox in the future.
 
 ### Coding
 The Tecplot file consists of zones and data are storage in zone. Zones describe different set of data in space or in time. All the numbers of data in different zones in one file are same. Auxiliary data is extra data attached to file or zone which can be seen and used in Tecplot.
@@ -29,7 +31,7 @@ There are four classes usually used included in the `ORDERED_TEC` namespace. The
 
 To use the package, first you need some  namespace declaration.
 ```matlab
-import ORDERED_TEC.*
+import liton_ordered_tec.*
 ```
 
 Then you need to declare a `TEC_FILE` object and set its properties. The property `Variables` is a cell of string containing the variables' name which is required.
