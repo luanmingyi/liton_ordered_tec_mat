@@ -22,7 +22,7 @@ Ordered_tec is a simple pack writing ordered data (structural data) to a binary 
 ## Usage
 
 ### Download and Configuration
-You only need to download the the folder `+liton_ordered_tec` and put it on the search path of MATLAB. Maybe we will distribute the package as a toolbox in the future.
+Download the toolbox `liton_ordered_tec.mltbx` and install it in Matlab.
 
 ### Coding
 The Tecplot file consists of zones and data are storage in zone. Zones describe different set of data in space or in time. All the numbers of data in different zones in one file are same. Auxiliary data is extra data attached to file or zone which can be seen and used in Tecplot.
